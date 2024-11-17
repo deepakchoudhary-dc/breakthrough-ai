@@ -1,0 +1,37 @@
+<!-- templates/index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Data Extractor Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to the AI Data Extractor Dashboard</h1>
+
+    <!-- Form for CSV Upload -->
+    <form action="/upload_csv" method="post" enctype="multipart/form-data">
+        <label for="csv_file">Upload CSV File:</label>
+        <input type="file" name="csv_file" id="csv_file" required>
+        <button type="submit">Upload CSV</button>
+    </form>
+
+    <!-- Form for Google Sheets Connection -->
+    <form action="/connect_google_sheet" method="post">
+        <label for="sheet_id">Google Sheet ID:</label>
+        <input type="text" name="sheet_id" id="sheet_id" required>
+        <button type="submit">Connect Google Sheets</button>
+    </form>
+
+    <!-- Input for Custom Query Template -->
+    <form action="/process_query" method="post">
+        <label for="query_template">Query Template:</label>
+        <input type="text" name="query_template" id="query_template" placeholder="e.g., Get email for {company}" required>
+        <button type="submit">Generate Queries</button>
+    </form>
+
+    <div id="result">
+        <!-- This is where results will be displayed -->
+    </div>
+</body>
+</html>
